@@ -1,0 +1,10 @@
+<nav class="navbar">
+    <div class="nav-left">
+      <span class="logo" (click)="goHome()">Jwt Auth Demo</span>
+    </div>
+    <div class="nav-right">
+      <span class="user-info">Welcome, {{ user?.userName }}</span>
+      <button (click)="goToProfile()">Profile</button>
+      <button class="logout" (click)="logout()">Sign Out</button>
+    </div>
+  </nav>

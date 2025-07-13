@@ -1,0 +1,52 @@
+<div class="product-form">
+    <h2>Add Product</h2>
+    <form (ngSubmit)="addProduct()">
+      <input type="text" [(ngModel)]="newProduct.productName" name="name" placeholder="Product Name" required />
+      <input type="number" [(ngModel)]="newProduct.price" name="price" placeholder="Price" required />
+      <textarea [(ngModel)]="newProduct.description" name="description" placeholder="Description"></textarea>
+      <button type="submit">{{ isEditing ? 'Update Product' : 'Add Product' }}</button>
+    </form>
+  </div>
+  
+  <hr />
+  
+  <div class="product-list">
+    <h2>Product List</h2>
+  
+    <table class="table table-striped" *ngIf="products.length; else noProducts">
+      <thead class="thead-dark">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Description</th>
+          <th>Created At</th>
+          <th>Actions</th> 
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of products">
+          <td>{{ p.productId }}</td>
+          <td>{{ p.productName }}</td>
+          <td>₹{{ p.price }}</td>
+          <td>{{ p.description }}</td>
+          <td>{{ p.createdAt | date: 'medium' }}</td>
+          <td>
+            <button class="btn btn-sm btn-warning me-2" (click)="editProduct(p)">Edit</button>
+          
+            <button
+              *ngIf="userRole === 'Admin'"
+              class="btn btn-sm btn-danger"
+              (click)="deleteProduct(p.productId)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <ng-template #noProducts>
+      <p>No products found.</p>
+    </ng-template>
+  </div>
