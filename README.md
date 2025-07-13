@@ -57,6 +57,16 @@ ng serve
 
 ```
 
+## 📷 Screenshots
+
+### 🔐 Login Page
+![Login](screenshots/Login.png)
+
+---
+
+### 🛒 Product Dashboard
+![Product](screenshots/Product.png)
+
 
 👇 Features
 
