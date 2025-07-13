@@ -1,0 +1,8 @@
+INSERT INTO Users (userName, userEmail, userPass, userRole)
+VALUES 
+('Mohd Aamir Indi', 'aamir@gmail.com', 'a123', 'Admin'),
+('Roshan Yadav', 'roshan@gmail.com', 'r123', 'Employee'),
+('Shivangi Verman', 'shivangi@gmail.com', 's123', 'Employee'),
+('Pavan Yadav', 'pavan@gmail.com', 'p123', 'HR');
+
+select * from Users;
