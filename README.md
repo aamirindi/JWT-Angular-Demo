@@ -104,3 +104,18 @@ Automatically attaches JWT token from localStorage to all protected API requests
 🧾 License
 
 MIT License. Feel free to use or extend for your own projects.
+
+CORS Policy 
+
+```bash
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy", policy =>
+    {
+        policy.WithOrigins("http://localhost:4200")
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials();
+    });
+});
+```
